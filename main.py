@@ -43,10 +43,6 @@ def get_connections():
 
         cursor.execute(query)
 
-        # for i in range(1, 10):
-            # print(f"Query {i} executed successfully")
-        # Execute the query
-            # Fetch and print the results
         for row in cursor:
             connections[row[2]] = { 'connections': row[3], 'Name': ''}
 
@@ -91,8 +87,6 @@ def get_ec2_instances():
 def main():
     connections = get_connections()
     ec2_instances = get_ec2_instances()
-    # print(connections)
-    # print(ec2_instances)
     
     for (key, value) in ec2_instances.items():
         if key in connections:
